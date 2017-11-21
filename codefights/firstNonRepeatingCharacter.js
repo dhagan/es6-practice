@@ -1,12 +1,22 @@
-function firstDuplicate(a) {
-  let counts = []
-  for (let value of a) {
-    if (counts[value]) {
-      return value
+function firstNotRepeatingCharacter(s) {
+  let has = {}
+  for (let i = 0; i < s.length; i++) {
+    if (has.hasOwnProperty(s[i])) {
+      has[s[i]]++
+    } else {
+      has[s[i]] = 1
     }
-    counts[value] = true
   }
-  return -1
+
+  console.log(has)
+
+  for (let first in has) {
+    if (has[first] == 1) {
+      return first
+    }
+  }
+
+  return '_'
 }
 
 
@@ -30,4 +40,4 @@ function firstDuplicate(a) {
 //   return result
 // }
 
-module.exports = firstDuplicate
+module.exports = firstNotRepeatingCharacter
