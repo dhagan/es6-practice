@@ -1,9 +1,10 @@
 // [3, 1, 2, 3, 4, 5]
 
-// function ListNode(x) {
-//   this.value = x;
-//   this.next = null;
-// }
+function ListNode(x) {
+  this.value = x;
+  this.next = null;
+}
+
 //
 // let a = new ListNode(5)
 // let b = new ListNode(4)
@@ -21,26 +22,36 @@
 
 function removeKFromList(l, k) {
 
-  let start = {}
-  while (l) {
-    console.log(l.value, start.value)
-    if (!start.value && l.value != k) {
-      Object.assign(start, l)
-    }
-    else if (l.next && l.next.value == k) {
-      l.next = l.next.next
-    }
+  while (l && l.value == k) {
     l = l.next
   }
 
-  let array = []
+  // let start = {}
+  // lesson learned!
+  // Object.assign(start, l)
+  let start = l
+
   while (start) {
-    array.push(start.value)
+
+    if (start.next) {
+      let next = {}
+      Object.assign(next, start.next)
+      while (next && next.value == k) {
+        next = next.next
+      }
+      start.next = next
+    }
     start = start.next
   }
-  console.log(array)
 
-  return start.next ? start : l
+  // let array = []
+  // while (l) {
+  //   array.push(l.value)
+  //   l = l.next
+  // }
+  // console.log(array)
+
+  return l ? l : []
 }
 
 // function removeKFromList(l, k) {
