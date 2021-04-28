@@ -32,3 +32,13 @@ var iterator = array1.keys();
 for (let key of iterator) {
   console.log(key); // expected output: 0 1 2
 }
+
+
+for ( let n in array1) {
+  console.log(n)
+}
+
+array1.forEach( (value) =>
+{
+  console.log(value)
+})
