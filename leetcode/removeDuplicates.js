@@ -1,5 +1,15 @@
 var array1 =[0,0,1,1,1,2,2,3,3,4];
 
+function removeDuplicates( nums) {
+  for ( let i = nums.length ; i >= 0; i-- ) {
+    //console.log(i, nums[i], nums)
+    if (nums[i-1] == nums[i]) {   
+      nums.splice(i, 1)
+    }
+  }
+  return nums.length
+}
+
 // array1.forEach ( (value ) =>
 // {
 //   console.log(value)
@@ -8,26 +18,19 @@ var array1 =[0,0,1,1,1,2,2,3,3,4];
 
 
 // function removeDuplicates( nums) {
-//   for ( let i = 0 ; i <= nums.length; i++ ) {
-//     if (nums[i-1] == nums[i]) {
-//       console.log(nums)
-//       nums.splice(i, 1)
+
+//     for ( let i = nums.length -1 ; i > 0; i-- ) {
+//       if (nums[i-1] == nums[i]) {
+//         if (i != nums.length -1) {
+//           nums[i-1] = nums[i+1]
+//           nums.pop()
+//         } else {
+//           nums[i] = null
+//         }
+//       }
 //     }
+//     return nums.length
 //   }
-//   return nums.length
-// }
-
-function removeDuplicates( nums) {
-
-    for ( let i = nums.length ; i >= 0; i-- ) {
-      console.log(i, nums[i], nums)
-      if (nums[i-1] == nums[i]) {   
-        nums.splice(i, 1)
-      }
-    }
-    return nums.length
-  }
-
 
 
 
