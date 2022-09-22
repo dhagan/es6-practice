@@ -8,13 +8,13 @@
     {
       "type": "pwa-node",
       "request": "launch",
-      "name": "Launch Program",
+      "name": "leet code",
       "skipFiles": [
         "<node_internals>/**"
       ],
       //"program": "${workspaceFolder}\\coderpad\\promise.js"
       //"program": "${workspaceFolder}\\leetcode\\myAtoi.js"
-      "program": "${workspaceFolder}\\_bah\\main.js"
+      "program": "${workspaceFolder}\\leetcode\\rotateRight.js"
     }
   ]
 }

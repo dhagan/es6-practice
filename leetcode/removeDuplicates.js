@@ -7,6 +7,7 @@ function removeDuplicates( nums) {
       nums.splice(i, 1)
     }
   }
+  console.log(nums)
   return nums.length
 }
 
