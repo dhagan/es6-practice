@@ -14,7 +14,16 @@
       ],
       //"program": "${workspaceFolder}\\coderpad\\promise.js"
       //"program": "${workspaceFolder}\\leetcode\\myAtoi.js"
-      "program": "${workspaceFolder}\\leetcode\\rotateRight.js"
+      "program": "${workspaceFolder}\\leetcode\\sumTwo.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Jest Tests",
+      "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
+      "cwd": "${workspaceRoot}",
+      "args": ["--verbose", "--runInBand", "--no-cache"],
+      "console": "integratedTerminal",
+     "internalConsoleOptions": "neverOpen"
     }
-  ]
 }

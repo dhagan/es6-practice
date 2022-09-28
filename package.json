@@ -4,11 +4,11 @@
   "description": "",
   "main": "proxy.js",
   "dependencies": {
-    "assert": "^1.4.1"
+    "assert": "^1.4.1",
+    "jest": "^29.0.3"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "test"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC"

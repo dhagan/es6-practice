@@ -37,3 +37,5 @@ function reverse( i) {
 };
 reverse(123)
 console.log(myAtoi("-"))
+
+module.exports = reverse
