@@ -46,39 +46,3 @@
       return 0;
 };
 
-
-
-/**
- * @param {string} s
- * @return {number}
- */
- var lengthOfLongestSubstring = function(s) {
-    let array = s.split('')
-    let try_me = ''
-    let res = ''
-
-    array.forEach( (value, index) =>
-    {
-      if (try_me.includes(value)) {
-        try_me = try_me.substring(try_me.indexOf(value)+1, try_me.length) + value 
-      } else {
-        try_me = try_me.concat(value)
-      }
-      if (try_me.length > res.length)
-      {
-        res = try_me;
-      }
-      console.log('try_me', try_me)
-    })
-    console.log(res)
-    return res.length
-};
-
-
-//console.log(lengthOfLongestSubstring('arare1rer'))
-//console.log(lengthOfLongestSubstring('abcabcbb'))
-//console.log(lengthOfLongestSubstring('pwwkew'))
-//console.log(lengthOfLongestSubstring('aab'))
-//console.log(lengthOfLongestSubstring('dvdf'))
-// console.log(lengthOfLongestSubstring('jbpnbwwd'))
-console.log(lengthOfLongestSubstring('loddktdji'))

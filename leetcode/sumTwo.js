@@ -26,7 +26,13 @@ var twoSumBruteForce = function (nums, target) {
   }
 };
 
-
+/**
+ * solution after reading hint 9/28/22
+ * 
+ * @param {} nums 
+ * @param {*} target 
+ * @returns 
+ */
 var twoSum = ( nums, target) =>
 {
   let map = new Map() 

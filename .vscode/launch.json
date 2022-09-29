@@ -14,7 +14,7 @@
       ],
       //"program": "${workspaceFolder}\\coderpad\\promise.js"
       //"program": "${workspaceFolder}\\leetcode\\myAtoi.js"
-      "program": "${workspaceFolder}\\leetcode\\sumTwo.js"
+      "program": "${workspaceFolder}\\leetcode\\easy.js"
     },
     {
       "type": "node",
