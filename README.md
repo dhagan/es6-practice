@@ -16,3 +16,12 @@ dynamic creation of object
 
 use an array to store 
 or use an object to store
+
+
+mutable
+
+
+
+array
+
+reduce((previousValue, currentValue, currentIndex) => { /* … */ } , initialValue)
