@@ -6,53 +6,70 @@ function ListNode(x) {
 }
 
 //
-// let a = new ListNode(5)
-// let b = new ListNode(4)
-// let c = new ListNode(3)
-// let d = new ListNode(2)
-// let e = new ListNode(1)
-// let f = new ListNode(3)
-//
-// f.next = e;
-// e.next = d;
-// d.next = c;
-// c.next = b;
-// a.next = b;
+let a = new ListNode(5)
+let b = new ListNode(4)
+let c = new ListNode(3)
+let d = new ListNode(2)
+let e = new ListNode(1)
+let f = new ListNode(3)
+
+f.next = e;
+e.next = d;
+d.next = c;
+c.next = b;
+a.next = b;
 
 
 function removeKFromList(l, k) {
-
-  while (l && l.value == k) {
-    l = l.next
-  }
-
-  // let start = {}
-  // lesson learned!
-  // Object.assign(start, l)
-  let start = l
-
-  while (start) {
-
-    if (start.next) {
-      let next = {}
-      Object.assign(next, start.next)
-      while (next && next.value == k) {
-        next = next.next
-      }
-      start.next = next
+  head = l
+  while (l.next) {
+    if (l.next.val == k) {
+      l.next = l.next.next
+    } else {
+      l.next
     }
-    start = start.next
   }
-
-  // let array = []
-  // while (l) {
-  //   array.push(l.value)
-  //   l = l.next
-  // }
-  // console.log(array)
-
-  return l ? l : []
 }
+
+console.log(removeKFromList(a,3))
+
+
+
+
+
+// function removeKFromList(l, k) {
+
+//   while (l && l.value == k) {
+//     l = l.next
+//   }
+
+//   // let start = {}
+//   // lesson learned!
+//   // Object.assign(start, l)
+//   let start = l
+
+//   while (start) {
+
+//     if (start.next) {
+//       let next = {}
+//       Object.assign(next, start.next)
+//       while (next && next.value == k) {
+//         next = next.next
+//       }
+//       start.next = next
+//     }
+//     start = start.next
+//   }
+
+//   // let array = []
+//   // while (l) {
+//   //   array.push(l.value)
+//   //   l = l.next
+//   // }
+//   // console.log(array)
+
+//   return l ? l : []
+// }
 
 // function removeKFromList(l, k) {
 //

@@ -105,8 +105,8 @@ var isValid = function (s) {
             if (stack.length == 0) {
                 return false
             } else if ((element == ']' && stack[stack.length - 1] == '[') ||
-                       (element == '}' && stack[stack.length - 1] == '{') ||
-                       (element == ')' && stack[stack.length - 1] == '(')) {
+                (element == '}' && stack[stack.length - 1] == '{') ||
+                (element == ')' && stack[stack.length - 1] == '(')) {
                 stack.pop()
             } else {
                 stack.push(element)
@@ -117,7 +117,7 @@ var isValid = function (s) {
     if (stack.length > 0)
         return false
     return true
-    
+
 }
 
 s = "[{{}}(())[[]]]"
@@ -137,55 +137,69 @@ s = "[{{}}(())[[]]]"
  * @return {ListNode}
  */
 function ListNode(val, next) {
-      this.val = (val===undefined ? 0 : val)
-      this.next = (next===undefined ? null : next) 
+    this.val = (val === undefined ? 0 : val)
+    this.next = (next === undefined ? null : next)
 }
-  
 
 
 
 
-l3 = new ListNode (3, null)
-l2 = new ListNode (2, l3)
-l1 = new ListNode (1, l2)
 
-ll3 = new ListNode (3, null)
-ll2 = new ListNode (2, ll3)
-ll1 = new ListNode (1, ll2)
+l3 = new ListNode(5, null)
+l2 = new ListNode(3, l3)
+l1 = new ListNode(1, l2)
+
+ll3 = new ListNode(6, null)
+ll2 = new ListNode(4, ll3)
+ll1 = new ListNode(2, ll2)
 
 
+l1 = new ListNode(2)
+ll1 = new ListNode(1)
 
-//  var mergeTwoLists = function(list1, list2) {
+// var mergeTwoLists = function (list1, list2) {
+
+//     if (list1 == null)
+//         return list2
+//     if (list2 == null)
+//         return list1
+//     if (list1 == null && list2 == null)
+//         return new ListNode()
+
+//     if (list1.val > list2.val) {
+//         head = list2
+//     } else {
+//         head = list1
+//     }
 
 //     c1 = list1
 //     c2 = list2
-//     while (true) {
+//     while (c1 && c2) {
 //         n1 = c1.next
 //         n2 = c2.next
-//         c1.next = c2
-//         c2.next = n1
+//         if (c1.val > c2.val) {
+//             c2.next = c1
+//             c1.next = n2
+//         } else
+//         {
+//             c1.next = c2
+//             c2.next = n1
+//         }
+//         // advance current
 //         c1 = n1
 //         c2 = n2
-//         console.log(list1, list2)
-//         // next1 = list1.next
-//         // list1.next = list2
-//         // next2 = list2.next
-//         // list2.next = next1
 
-//         // current = current.next
-//         // if (current.next == null) {
-//         //     current.next = list2
-//         //     return list1
-//         // } 
+//         console.log(list1, list2)
 //     }
-    
-//};
+//     return head
+
+// };
 
 
 var mergeTwoLists = function(l1, l2) {
     const dummy = new ListNode(0);
     let current = dummy;  
-  
+
     while(l1 !== null && l2 !== null){
       if(l1.val <= l2.val){
         current.next = l1;
@@ -196,16 +210,58 @@ var mergeTwoLists = function(l1, l2) {
       }
       current = current.next;
     }
-  
+
   	if(l1 !== null){
       current.next = l1;        
     }
-      
+
     if(l2 !== null){
       current.next = l2;
     }
-    
+
     return dummy.next;
 };
 
-console.log(mergeTwoLists(l1, ll1))
+//console.log(mergeTwoLists(l1, ll1))
+
+
+array = [3,2,1,3]
+// const removeElement = (a, num) =>
+// {
+//     let b = a.map(element => {
+//         if (element == num) {
+//             //return "_"
+//         } else
+//         {
+//             return element
+//         }
+//     });
+//     return b
+// }
+
+
+const removeElement = (a, num) =>
+{
+    for (let index = a.length; index >= 0; index--) {
+        if (a[index] == num) {
+            a.splice(index,1)
+        }
+    }
+    return a
+}
+
+
+
+array = [1,2,4,5,6,7]
+target = 3
+var searchInsert = function(array, target) {
+    if (target > array[array.length])
+        return array.length + 1
+    for (let index = 0; index < array.length - 1; index++) {
+        if (array[index] <= target && array[index+1] > target) {
+            return index + 1
+        }
+    }
+}; 
+
+console.log(searchInsert(array, 3))
