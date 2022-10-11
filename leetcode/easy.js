@@ -432,3 +432,24 @@ var inorderTraversal = function(root) {
         return false
     return ( isSameTree(p.right, q.right) && isSameTree(p.left, q.left))
 };
+
+
+// container with the most water
+/**
+ * @param {number[]} height
+ * @return {number}
+ */
+ var maxArea = function(height) {
+    max = 0
+    for ( let i = height.length - 1; i > 0; i--) {
+        if (height[i] * i < max)
+            continue
+        for ( let j = 0; j <= i - 1; j++) {
+            min = Math.min(height[i], height[j])
+            max = Math.max(min *( i-j), max)
+            //console.log(i, j, height[j], height[i], i-j, min, max, min * i-j)
+        }
+    }
+    return max
+    
+};
