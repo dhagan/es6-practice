@@ -17,7 +17,7 @@ function climbingStairs(n) {
   // 13
 
   n = 26
-  console.log( `input ${n}`)
+  console.log(`input ${n}`)
   return fibonacci(n)
   // if (Number.isInteger(n / 2)) {
   //   return 2 + permute(n-1)
@@ -37,19 +37,39 @@ function climbingStairs(n) {
 //   return result
 // }
 
-function fibonacci (n) {
+function fibonacci_ugh(n) {
   let result = []
   result[0] = 1
   result[1] = 2
 
-  if (n ===1 || n ===2) {
+  if (n === 1 || n === 2) {
     return n;
   }
   for (let i = 2; i <= n; i++) {
-    result[i] = result[i-1] + result[i-2]
+    result[i] = result[i - 1] + result[i - 2]
   }
   console.log(result)
-  return result[n-1]
+  return result[n - 1]
 }
+
+var fibonacci = function (n) {
+  if (n == 0)
+    return 0
+  if (n == 1)
+    return 1
+  if (n == 2)
+    return 2
+  n1 = 0
+  n2 = 1
+  nextTerm = 0
+  for (let i = 1; i <= n; i++) {
+    console.log(n1);
+    nextTerm = n1 + n2;
+    n1 = n2;
+    n2 = nextTerm;
+  }
+  return nextTerm
+}
+
 
 module.exports = climbingStairs
