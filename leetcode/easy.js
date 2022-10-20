@@ -25,6 +25,43 @@ map = {
     M: 1000
 }
 
+reversemap = {
+    1000: 'M',
+    900: 'CM',
+    500: 'D',
+    400: 'CD',
+    100: 'C',
+    90: 'XC',
+    50: 'L',
+    40: 'XL',
+    10: 'X',
+    9: 'IX',
+    5: 'V',
+    4: 'IV',
+    1: 'I'
+}
+
+const intToRoman = (i) => {
+    ret = []
+    // lesson here - object is not iteratable - which makes sense to me at this moment
+    //for (const[key, value] of map) {
+
+    // two lessons here - 1) the object entries are sorted numerically? lexgraphic?  we can use reverse() to get 
+    // us out of this. 
+
+    for (const [key, value] of Object.entries(reversemap).reverse())  {
+        console.log(key, value, i)
+        while (i > key) {
+            i = i - key
+            ret.push(value)
+        }
+    }
+    return ret.join("")
+   
+}
+
+console.log(intToRoman(1999))
+
 const romanToInt = (s) => {
     let res = 0
     let array = s.split("")
@@ -347,7 +384,7 @@ const addBinary1 = () => {
     console.log(s.toString(2))
 }
 
-addBinary1()
+//addBinary1()
 
 
 /**
